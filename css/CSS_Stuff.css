@@ -32,13 +32,12 @@
 
 #master-container {
     display: flex;
-
     position: relative;
     justify-content: center;
     align-items: center;
     margin: auto;
-    width: 1000px;
-    height: 600px;
+    width: 100vw;
+    height: 60vh;
 }
 
 #game-screen {
@@ -52,6 +51,10 @@
     display: none;
 }
 
+/*
 #game-over {
-    display: none;
+    text-align: center;
+    font-family:'Londrina Solid', cursive;
+    font-size: 5em;
 }
+*/
