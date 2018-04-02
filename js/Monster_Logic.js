@@ -7,7 +7,7 @@ var Active_Monsters = [
 ];
 
 function setupMonster(pos_num) {
-    var newMonster = $("<img></img>");
+    var newMonster = $("<img>");
     newMonster.addClass("enemy_monster");
     newMonster.attr("src", "assets/climbing_enemy.svg");
     newMonster.css("transform", "translate(" + Positions[pos_num].position.x.toString() + "px, 525px)");
