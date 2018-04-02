@@ -36,8 +36,8 @@
     justify-content: center;
     align-items: center;
     margin: auto;
-    width: 1000px;
-    height: 600px;
+    width: 100vw;
+    height: 60vh;
 }
 
 #game-screen {
@@ -54,7 +54,3 @@ img {
 }
 
 
-
-#game-over {
-    display: none;
-}
