@@ -53,12 +53,13 @@
 
         <!--  Game Screen Container  -->
         <g id="game-screen" style="display:flex;">
+            <rect height="500" width="1000" y="0" x="0" stroke="none" fill="url(#sky)"/>
             <image id = "player_char" href="assets/player_idle_NEW.svg" width="100%" height="100%"/>
             <image id = "player_platform" href="assets/player_platform_NEW.svg" width="100%" height="100%"/>
         </g>
         
         <!--  Game Over: Time's Up Container  -->
-        <g id="game-over-screen">
+        <g id="game-over-screen" style="display:none">
             <!--     Background/Sky       -->
             <rect height="500" width="1000" y="0" x="0" stroke="none" fill="url(#sky)"/>
             
@@ -117,7 +118,7 @@
         
         
         <!--    Game Over: Out of Lives Container    -->
-        <g id="game-death-screen">
+        <g id="game-death-screen" style="display:none">
             <rect height="500" width="1000" y="0" x="0" stroke="none" fill="url(#sky)"/>
             
             <!--     Opaque Bomb       -->
