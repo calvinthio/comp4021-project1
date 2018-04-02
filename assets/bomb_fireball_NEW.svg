@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Sprites_Sized_Down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" width="1000px" height="500px" viewBox="0 0 1000 500" enable-background="new 0 0 1000 500" xml:space="preserve">
+<radialGradient id="SVGID_1_" cx="499.4688" cy="151.5039" r="67.8335" gradientTransform="matrix(0.0264 0.9997 -0.9895 0.0261 636.1948 -351.7483)" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#FFFFFF"/>
+	<stop  offset="0.3978" style="stop-color:#FF9300"/>
+	<stop  offset="0.6828" style="stop-color:#FF0000"/>
+</radialGradient>
+<path fill="url(#SVGID_1_)" stroke="#B70000" stroke-width="3" stroke-miterlimit="10" d="M541.348,111.962
+	c-11.691,48.683-30.994,62.927-43.793,62.927c-12.797,0-24.447-21.26-38.902-68.241l17.857,16.794l2.977-17.646l8.928,16.369
+	l3.615-20.195l5.525,18.921l6.59-18.921l2.553,15.731l11.691-14.243v18.282l12.756-13.605l-3.613,15.519L541.348,111.962z"/>
+</svg>

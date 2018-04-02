@@ -25,7 +25,7 @@
     <!--  Edward's global css file containing all definitions, to be modularised later  -->
     <link href="css/CSS_Stuff.css" rel="stylesheet">
 </head>
-  
+
 <body>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500">
         <!--  All gradient definitions  -->
@@ -34,26 +34,32 @@
                 <stop offset="0" stop-color="#A67C52"/>
                 <stop offset="0.4" stop-color="#D3AB88"/>
             </linearGradient>
-        </defs> 
-        
+
+            <image id = "platform_ladder_ref" href="assets/platform_ladder_NEW.svg" width="100%" height="100%"/>
+            <image id = "platform_bomb_ref" href="assets/platform_bomb_NEW.svg" width="100%" height="100%"/>
+            <image id = "bomb_fireball_ref" href="assets/bomb_fireball_NEW.svg" width="100%" height="100%"/>
+            <image id = "climbing_enemy_ref" href="assets/climbing_enemy_NEW.svg" width="100%" height="100%"/>
+        </defs>
+
         <!--  Game Start Container  -->
-        <g id="game-start" style="display:none">
-            
+        <g id="game-start" style="display:none;">
+
         </g>
-        
-        
+
+
         <!--  Game Screen Container  -->
-        <g id="game-screen" style="display:none">
-            
+        <g id="game-screen" style="display:flex;">
+            <image id = "player_char" href="assets/player_idle_NEW.svg" width="100%" height="100%"/>
+            <image id = "player_platform" href="assets/player_platform_NEW.svg" width="100%" height="100%"/>
         </g>
-        
-        
+
+
         <!--  Game Over Container  -->
-        <g id="game-over" style="display:flex">
+        <g id="game-over" style="display:none;">
             <rect height="500" width="1000" y="0" x="0" stroke="none" fill="url(#sky)"/>
             <text id="gameover" x="500" y="250" fill="white" font-family="'Londrina Solid', cursive" font-size="80px" text-anchor="middle">Game Over</text>
         </g>
-         
+
     </svg>
 </body>
 </html>
