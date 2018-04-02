@@ -32,7 +32,6 @@
 
 #master-container {
     display: flex;
-
     position: relative;
     justify-content: center;
     align-items: center;
@@ -48,9 +47,13 @@
     height: 100%;
 }
 
-#start-screen {
-    display: none;
+/* Start screen css*/
+img {
+    width: 100vw;
+    height: 20vh;
 }
+
+
 
 #game-over {
     display: none;

@@ -33,7 +33,7 @@ $(document).ready(function() {
         }
     }, 1000 * Math.floor((Math.random() * 5) + 1));
 
-    $(document).on("keypress", function(e) {
+    $(document).on("keydown", function(e) {
         keyPressProcess({key: e.keyCode, char: e.charCode});
     });
 });
