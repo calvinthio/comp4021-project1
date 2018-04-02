@@ -49,33 +49,42 @@ function theBigHitboxCollisionDetectionLoop() {
     for (var i = 0; i < NUMBER_OF_PLAYER_POSITIONS; i++) {
         // Check each fireball object. If it's currently active and travelling down the ladder, then we check it for collision detection with any monsters.
         var current_fireball = Positions[i].fireball;
-        if (current_fireball.active != false) {
-            // If Active_Monsters[i].length == 0, then this for loop will do nothing. Still, put this if condition here in case.
-            if (Active_Monsters[i].length != 0) {
-                for (var j = 0; j < Active_Monsters[i].length; j++) {
-                    requestAnimationFrame(function () {
-                        collisionBetweenMonsterAndFireball(current_fireball.obj_ref, Active_Monsters[j]);
-                    });
+
+        if (Active_Monsters[i].length != 0) {
+            var current_enemyQueue = Active_Monsters[i];
+            for (var j = 0; j < current_enemyQueue.length; j++) {
+
+                checkHowHighMonsterClimbs(current_enemyQueue[j], i);
+                if (current_fireball.active != false) {
+                    collisionBetweenMonsterAndFireball(current_fireball.obj_ref, current_enemyQueue[j], i);
                 }
             }
         }
+
+        /*
+        if (current_fireball.active != false) {
+            // If Active_Monsters[i].length == 0, then this for loop will do nothing. Still, put this if condition here in case.
+            if (Active_Monsters[i].length != 0) {
+                var current_enemyQueue = Active_Monsters[i];
+                for (var j = 0; j < current_enemyQueue.length; j++) {
+                    collisionBetweenMonsterAndFireball(current_fireball.obj_ref, current_enemyQueue[j], i);
+                }
+            }
+        } else {
+            if (Active_Monsters[i].length != 0) {
+                var current_enemyQueue = Active_Monsters[i];
+                for (var j = 0; j < current_enemyQueue.length; j++) {
+                    checkHowHighMonsterClimbs(current_enemyQueue[j], i);
+                }
+            }
+        }
+        */
+
     }
 
     if (gameStillGoing == true) {
         return requestAnimationFrame(theBigHitboxCollisionDetectionLoop);
     }
-}
-
-function collisionBetweenMonsterAndFireball(fireball_obj, monster_entity) { // Check collision between monster object and fireball object
-
-}
-
-function setupMonsterLOOP() {
-    setupMonster(Math.floor((Math.random() * 5)));
-
-    setTimeout(function () {
-        setupMonsterLOOP(Math.floor((Math.random() * 5)));
-    }, 1000 * Math.floor((Math.random() * 5) + 1));
 }
 
 function keyDownProcess(code_table) {

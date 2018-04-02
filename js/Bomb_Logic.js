@@ -25,3 +25,16 @@ function fireBombTrail_Return(pos_num) {
         bombRespawn(pos_num);
     }, 1000);
 }
+
+function collisionBetweenMonsterAndFireball(fireball_obj, monster_entity, monster_pos) { // Check collision between monster object and fireball object
+    var fireball_PosY = parseFloat(fireball_obj.css("Transform").split(",")[5]);
+    var enemy_PosY = parseFloat(monster_entity.obj_ref.css("Transform").split(",")[5]);
+
+    //console.log("Fireball Y: " + fireball_PosY + ", Enemy Y: " + enemy_PosY);
+    var difference_in_Y = fireball_PosY - enemy_PosY;
+
+    if (difference_in_Y > 261 && difference_in_Y < 347) {
+        console.log("Hit!");
+        monsterGetsKilled(monster_pos);
+    }
+}
