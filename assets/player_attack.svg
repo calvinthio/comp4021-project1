@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="117.282px" height="148.5px" viewBox="0 0 117.282 148.5" enable-background="new 0 0 117.282 148.5" xml:space="preserve">
+<g>
+	<g>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="58.875" y1="51.542" x2="58.875" y2="90.266"/>
+		<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points="90.049,103.568 
+			65.198,90.266 52.555,90.266 27.539,102.273 		"/>
+		<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points="58.875,116.402 
+			67.93,89.076 73.114,68.503 46.729,68.503 49.493,88.918 58.875,116.402 		"/>
+		
+			<ellipse transform="matrix(-0.7072 -0.707 0.707 -0.7072 -30.8191 184.3083)" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="22.757" cy="98.536" rx="7.302" ry="1.885"/>
+		
+			<ellipse transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 231.8237 103.2606)" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="94.526" cy="99.643" rx="7.303" ry="1.884"/>
+		<circle id="Head_1_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="58.875" cy="51.542" r="14.605"/>
+	</g>
+	<g>
+		<rect x="47.399" y="96.875" width="22.951" height="39.053"/>
+		<circle fill="#513F30" cx="58.874" cy="116.402" r="1.884"/>
+	</g>
+</g>
+</svg>
