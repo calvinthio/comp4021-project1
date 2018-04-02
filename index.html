@@ -4,24 +4,40 @@
     <meta charset="UTF-8">
     <title>SmashBomb</title>
     
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="js/gamestart.js"></script>
     <script src="js/gamescreen.js"></script>
     <script src="js/gameover.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src = "js/Global_Logic.js"></script>
+    <script src = "js/Player_Logic.js"></script>
+    <script src = "js/Bomb_Logic.js"></script>
+    <script src = "js/Monster_Logic.js"></script>
+    <script src = "js/Game_Setup.js"></script>
     
     <link href="https://fonts.googleapis.com/css?family=Londrina+Solid" rel="stylesheet">
     <link rel="stylesheet" href="css/gamestart.css">
     <link rel="stylesheet" href="css/gamescreen.css">
-    <link rel="stylesheet" href="css/gameover.css">   
+    <link rel="stylesheet" href="css/gameover.css">  
+    <link href="css/CSS_Stuff.css" rel="stylesheet"> 
 </head>
 <body>
-    <!--  Game Start Screen (Calvin)  -->
+    <div id="master-container">
     
-    <!--  Game Screen (Edward) -->
+        <!--  Game Start Screen (Calvin)  -->
+         <div id="start-screen">
+
+        </div>
+    
+        <!--  Game Screen (Edward) -->
+        <div id="game-screen">
+            <img src = "assets/player_idle.svg" id = "player_char">
+            <img src = "assets/player_platform.svg" id = "player_platform">
+        </div>
       
-    <!--  Game Over Screen (Rhea) -->
-    <div id="game-over-area">
-        Game Over
+        <!--  Game Over Screen (Rhea) -->
+        <div id="game-over">
+            Game Over
+        </div>
     </div>
 </body>
 </html>
