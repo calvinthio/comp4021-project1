@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="117.282px" height="148.5px" viewBox="0 0 117.282 148.5" enable-background="new 0 0 117.282 148.5" xml:space="preserve">
+<g>
+	<g>
+		
+			<rect x="73.733" y="12.598" transform="matrix(-0.9966 0.0829 -0.0829 -0.9966 155.0171 90.0707)" fill="#513F30" width="3.812" height="71.309"/>
+		<path d="M85.331,42.131l-20.564,1.818c-6.387,0.531-11.994-4.217-12.525-10.603c-0.531-6.387,4.217-11.995,10.604-12.526
+			l20.565-1.818L85.331,42.131z"/>
+		<circle fill="#383838" cx="84.37" cy="30.566" r="11.604"/>
+	</g>
+	<g>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="59.061" y1="50.278" x2="59.061" y2="100.621"/>
+		<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points="68.764,133.495 
+			64.567,100.621 53.343,100.621 50.644,133.495 		"/>
+		<polyline fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" points="81.929,52.66 
+			86.059,73.94 67.708,67.43 50.008,67.43 55.25,85.216 73.512,77.275 		"/>
+		
+			<ellipse id="Right_Hand_3_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="79.229" cy="77.275" rx="5.717" ry="3.335"/>
+		
+			<ellipse id="Left_Hand_3_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="76.688" cy="52.66" rx="5.241" ry="2.382"/>
+		<ellipse fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="44.583" cy="134.024" rx="7.385" ry="1.905"/>
+		<ellipse fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="74.931" cy="134.024" rx="7.384" ry="1.905"/>
+		<circle id="Head_11_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="59.061" cy="50.278" r="14.77"/>
+	</g>
+</g>
+</svg>
