@@ -7,10 +7,10 @@ var Active_Monsters = [
 ];
 
 function setupMonster(pos_num) {
-    var newMonster = $("<img>");
+    var newMonster = $(document.createElementNS("http://www.w3.org/2000/svg", "use"));
     newMonster.addClass("enemy_monster");
-    newMonster.attr("src", "assets/climbing_enemy.svg");
-    newMonster.css("transform", "translate(" + Positions[pos_num].position.x.toString() + "px, 525px)");
+    newMonster.attr("href", "#climbing_enemy_ref");
+    newMonster.css("transform", "translate(" + Positions[pos_num].position.x.toString() + "px, 0px)");
     newMonster.hide();
 
     Active_Monsters[pos_num].push({obj_ref: newMonster, timeout_func: null});
@@ -22,7 +22,7 @@ function setupMonster(pos_num) {
 
 function startMonsterMove(monster_entity, monster_pos) {
     monster_entity.obj_ref.show();
-    monster_entity.obj_ref.css("transform", "translate(" + Positions[monster_pos].position.x.toString() + "px, 100px)");
+    monster_entity.obj_ref.css("transform", "translate(" + Positions[monster_pos].position.x.toString() + "px, -300px)");
 
     monster_entity.timeout_func = setTimeout(function () {
         monsterReachesTop(monster_pos);

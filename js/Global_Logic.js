@@ -11,7 +11,7 @@ $(document).ready(function() {
         Positions[i] = {
             position: {
                 x: (PLATFORM_WIDTH * 0.2) * (i - Math.floor((NUMBER_OF_PLAYER_POSITIONS/2))),
-                y: 50
+                y: 0
             },
             canFireShotFromHere: true,
             bomb_obj: null,
@@ -48,12 +48,13 @@ $(document).ready(function() {
 function theBigHitboxCollisionDetectionLoop() {
     for (var i = 0; i < NUMBER_OF_PLAYER_POSITIONS; i++) {
         // Check each fireball object. If it's currently active and travelling down the ladder, then we check it for collision detection with any monsters.
-        if (Positions[i].fireball.active != false) {
+        var current_fireball = Positions[i].fireball;
+        if (current_fireball.active != false) {
             // If Active_Monsters[i].length == 0, then this for loop will do nothing. Still, put this if condition here in case.
             if (Active_Monsters[i].length != 0) {
                 for (var j = 0; j < Active_Monsters[i].length; j++) {
                     requestAnimationFrame(function () {
-                        collisionBetweenMonsterAndFireball(Positions[i].fireball.obj_ref, Active_Monsters[j]);
+                        collisionBetweenMonsterAndFireball(current_fireball.obj_ref, Active_Monsters[j]);
                     });
                 }
             }
@@ -67,11 +68,6 @@ function theBigHitboxCollisionDetectionLoop() {
 
 function collisionBetweenMonsterAndFireball(fireball_obj, monster_entity) { // Check collision between monster object and fireball object
 
-
-
-    requestAnimationFrame(function () {
-        collisionBetweenMonsterAndFireball(Positions[i].fireball.obj_ref, Active_Monsters[j]);
-    });
 }
 
 function setupMonsterLOOP() {
@@ -84,7 +80,7 @@ function setupMonsterLOOP() {
 
 function keyDownProcess(code_table) {
     if (code_table.key == 37 || code_table.key == 39) {
-        if ($(Player_Obj.html_id_string).attr("src") != "assets/player_attack.svg") {
+        if (Player_Obj.current_state == "idle") {
             Player_Obj.currentPos = movePlayerLeftOrRight(code_table.key, Player_Obj.currentPos);
         }
     }

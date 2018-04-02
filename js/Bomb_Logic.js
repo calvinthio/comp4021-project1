@@ -18,7 +18,7 @@ function fireBombTrail_Go(pos_num) {
 
 function fireBombTrail_Return(pos_num) {
     Positions[pos_num].fireball.obj_ref.hide();
-    Positions[pos_num].fireball.obj_ref.css("transform", "translate(" + Positions[pos_num].position.x.toString() + "px, 125px)");
+    Positions[pos_num].fireball.obj_ref.css("transform", "translate(" + Positions[pos_num].position.x.toString() + "px, 0px)");
     Positions[pos_num].fireball.active = false;
 
     setTimeout(function () {
