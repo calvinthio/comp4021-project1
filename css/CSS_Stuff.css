@@ -6,7 +6,6 @@
 }
 
 #player_platform {
-    transform: translateY(185px);
     position: absolute;
     margin: auto;
     z-index: -1;
@@ -50,11 +49,3 @@
 #start-screen {
     display: none;
 }
-
-/*
-#game-over {
-    text-align: center;
-    font-family:'Londrina Solid', cursive;
-    font-size: 5em;
-}
-*/
