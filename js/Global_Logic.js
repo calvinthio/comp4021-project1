@@ -11,47 +11,95 @@ var SCORE_KEEPING = {
     hit_points: 3
 };
 
-$(document).ready(function() {
-    for (var i = 0; i < NUMBER_OF_PLAYER_POSITIONS; i++) {
-        Positions[i] = {
-            position: {
-                x: (PLATFORM_WIDTH * 0.2) * (i - Math.floor((NUMBER_OF_PLAYER_POSITIONS/2))),
-                y: 0
-            },
-            canFireShotFromHere: true,
-            bomb_obj: null,
-            ladder_obj: null,
-            fireball: {
-                obj_ref: null,
-                active: false
+// $(document).ready(function() {
+        // for (var i = 0; i < NUMBER_OF_PLAYER_POSITIONS; i++) {
+        //     Positions[i] = {
+        //         position: {
+        //             x: (PLATFORM_WIDTH * 0.2) * (i - Math.floor((NUMBER_OF_PLAYER_POSITIONS/2))),
+        //             y: 0
+        //         },
+        //         canFireShotFromHere: true,
+        //         bomb_obj: null,
+        //         ladder_obj: null,
+        //         fireball: {
+        //             obj_ref: null,
+        //             active: false
+        //         }
+        //     }
+        // }
+
+        // setup_BombsAndLadders();
+
+        // setNewPlayerPosition(Player_Obj.currentPos);
+
+        // setTimeout(function () {
+        //     if (gameStillGoing == true) {
+        //         setupMonsterLOOP()
+        //     }
+        // }, 1000 * Math.floor((Math.random() * 5) + 1));
+
+        // $(document).on("keydown", function(e) {
+        //     if (gameStillGoing == true) {
+        //         keyDownProcess({key: e.keyCode, char: e.charCode});
+        //     }
+        // });
+
+        // $(document).on("keypress", function(e) {
+        //     if (gameStillGoing == true) {
+        //         keyPressProcess({key: e.keyCode, char: e.charCode});
+        //     }
+        // });
+
+        // requestAnimationFrame(theBigHitboxCollisionDetectionLoop);
+
+// });
+
+// run this function once the start button is clicked
+function startButtonClicked() {
+
+    $("#game-screen").fadeIn(400);
+    $("#game-start").hide();
+
+     for (var i = 0; i < NUMBER_OF_PLAYER_POSITIONS; i++) {
+            Positions[i] = {
+                position: {
+                    x: (PLATFORM_WIDTH * 0.2) * (i - Math.floor((NUMBER_OF_PLAYER_POSITIONS/2))),
+                    y: 0
+                },
+                canFireShotFromHere: true,
+                bomb_obj: null,
+                ladder_obj: null,
+                fireball: {
+                    obj_ref: null,
+                    active: false
+                }
             }
         }
-    }
 
-    setup_BombsAndLadders();
+        setup_BombsAndLadders();
 
-    setNewPlayerPosition(Player_Obj.currentPos);
+        setNewPlayerPosition(Player_Obj.currentPos);
 
-    setTimeout(function () {
-        if (gameStillGoing == true) {
-            setupMonsterLOOP()
-        }
-    }, 1000 * Math.floor((Math.random() * 5) + 1));
+        setTimeout(function () {
+            if (gameStillGoing == true) {
+                setupMonsterLOOP()
+            }
+        }, 1000 * Math.floor((Math.random() * 5) + 1));
 
-    $(document).on("keydown", function(e) {
-        if (gameStillGoing == true) {
-            keyDownProcess({key: e.keyCode, char: e.charCode});
-        }
-    });
+        $(document).on("keydown", function(e) {
+            if (gameStillGoing == true) {
+                keyDownProcess({key: e.keyCode, char: e.charCode});
+            }
+        });
 
-    $(document).on("keypress", function(e) {
-        if (gameStillGoing == true) {
-            keyPressProcess({key: e.keyCode, char: e.charCode});
-        }
-    });
+        $(document).on("keypress", function(e) {
+            if (gameStillGoing == true) {
+                keyPressProcess({key: e.keyCode, char: e.charCode});
+            }
+        });
 
-    requestAnimationFrame(theBigHitboxCollisionDetectionLoop);
-});
+        requestAnimationFrame(theBigHitboxCollisionDetectionLoop);
+}
 
 function GAME_OVER(didYouWin) {
     monstersArrayTotalClear();
@@ -110,3 +158,8 @@ function keyPressProcess(code_table) {
         fireFromPosition(Player_Obj.currentPos);
     }
 }
+
+function ifGameStarted() {
+    gameStarted = true;
+}
+

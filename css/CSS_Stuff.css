@@ -45,6 +45,9 @@
     height: 100%;
 }
 
-#start-screen {
-    display: none;
+/* Start screen css*/
+img {
+    width: 100vw;
+    height: 20vh;
 }
+
