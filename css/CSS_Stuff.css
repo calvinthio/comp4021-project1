@@ -8,7 +8,6 @@
 #player_platform {
     position: absolute;
     margin: auto;
-    z-index: -1;
 }
 
 .platform_ladder, .platform_bomb {
