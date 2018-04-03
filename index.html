@@ -54,15 +54,21 @@
         <!--  Game Screen Container  -->
         <g id="game-screen" style="display:flex;">
             <rect height="500" width="1000" y="0" x="0" stroke="none" fill="url(#sky)"/>
-            <image id = "player_char" href="assets/player_idle_NEW.svg" width="100%" height="100%"/>
             <image id = "player_platform" href="assets/player_platform_NEW.svg" width="100%" height="100%"/>
+            <image id = "player_char" href="assets/player_idle_NEW.svg" width="100%" height="100%"/>
+            <g id="ladders-container" style="display:flex;">
+
+            </g>
+            <g id="enemies-container" style="display:flex;">
+
+            </g>
         </g>
-        
+
         <!--  Game Over: Time's Up Container  -->
-        <g id="game-over-screen" style="display:none">
+        <g id="game-over-screen" style="display:none;">
             <!--     Background/Sky       -->
             <rect height="500" width="1000" y="0" x="0" stroke="none" fill="url(#sky)"/>
-            
+
             <!--     Opaque Sun       -->
             <g id="sun">
                 <defs>
@@ -99,39 +105,39 @@
                     </g>
                 </g>
             </g>
-            
-            
+
+
             <text class="game-over" x="500" y="150">GAME OVER</text>
             <text class="game-over-msg" x="305" y="190">
                 <tspan dy="0">You survived the night! The sun has</tspan>
                 <tspan dx="-420" dy="30">risen and the sprites have been beaten</tspan>
             </text>
-            
+
             <!--      Score      -->
             <text class="final-score" x="400" y="300">Score: (variable)</text>
-            
+
             <!--     Restart Button       -->
             <foreignObject x="445" y="350" class="button" fill="white">
                 <button xmlns="http://www.w3.org/1999/xhtml">Play Again</button>
             </foreignObject>
         </g>
-        
-        
+
+
         <!--    Game Over: Out of Lives Container    -->
         <g id="game-death-screen" style="display:none">
             <rect height="500" width="1000" y="0" x="0" stroke="none" fill="url(#sky)"/>
-            
+
             <!--     Opaque Bomb       -->
             <g id="bomb">
                 <title>Layer 1</title>
                 <path transform="rotate(-45.505123138427734 160.14196777343759,305.9685363769532) " opacity="0.1" fill="black" d="m277.25624,202.96012l-33.00781,31.98828l16.82129,16.30172c5.9668,5.7825 5.9668,15.13292 0,20.8539l-11.04492,10.70377c7.49023,16.05565 11.67969,33.89527 11.67969,52.65763c0,70.68179 -59.09668,127.95311 -132.03125,127.95311s-132.03125,-57.2098 -132.03125,-127.89159s59.09668,-127.95311 132.03125,-127.95311c19.36035,0 37.76856,4.06005 54.33594,11.31893l11.04492,-10.70377c5.9668,-5.7825 15.61523,-5.7825 21.51855,0l16.82129,16.30172l33.00781,-31.98828l10.85449,10.45771zm37.76856,-17.53204l-15.23438,0c-4.18945,0 -7.61719,3.32186 -7.61719,7.38191s3.42773,7.38191 7.61719,7.38191l15.23438,0c4.18945,0 7.61719,-3.32186 7.61719,-7.38191s-3.42773,-7.38191 -7.61719,-7.38191zm-38.08594,-36.90955c-4.18945,0 -7.61719,3.32186 -7.61719,7.38191l0,14.76382c0,4.06005 3.42773,7.38191 7.61719,7.38191s7.61719,-3.32186 7.61719,-7.38191l0,-14.76382c0,-4.06005 -3.42773,-7.38191 -7.61719,-7.38191zm21.51855,33.83375l10.79102,-10.45771c2.9834,-2.89125 2.9834,-7.56646 0,-10.45771c-2.9834,-2.89125 -7.80762,-2.89125 -10.79102,0l-10.79102,10.45771c-2.9834,2.89125 -2.9834,7.56646 0,10.45771c3.04688,2.89125 7.87109,2.89125 10.79102,0zm-43.03711,0c2.9834,2.89125 7.80762,2.89125 10.79102,0c2.9834,-2.89125 2.9834,-7.56646 0,-10.45771l-10.79102,-10.45771c-2.9834,-2.89125 -7.80762,-2.89125 -10.79102,0c-2.9834,2.89125 -2.9834,7.56646 0,10.45771l10.79102,10.45771zm43.03711,20.91541c-2.9834,-2.89125 -7.80762,-2.89125 -10.79102,0c-2.9834,2.89125 -2.9834,7.56646 0,10.45771l10.79102,10.45771c2.9834,2.89125 7.80762,2.89125 10.79102,0c2.9834,-2.89125 2.9834,-7.56646 0,-10.45771l-10.79102,-10.45771zm-229.72168,112.57413c0,-21.71512 18.21777,-39.37019 40.625,-39.37019c5.58594,0 10.15625,-4.42915 10.15625,-9.84255s-4.57031,-9.84255 -10.15625,-9.84255c-33.5791,0 -60.9375,26.51336 -60.9375,59.05528c0,5.4134 4.57031,9.84255 10.15625,9.84255s10.15625,-4.42915 10.15625,-9.84255z" id="svg_1"/>
             </g>
-            
+
             <text class="game-over" x="500" y="150">GAME OVER</text>
             <text class="game-over-msg" x="343" y="200">Oh no! You're all out of lives</text>
             <!--      Score      -->
             <text class="final-score" x="400" y="300">Score: (variable)</text>
-            
+
             <!--     Restart Button       -->
             <foreignObject x="445" y="350" class="button" fill="white">
                 <button xmlns="http://www.w3.org/1999/xhtml">Play Again</button>

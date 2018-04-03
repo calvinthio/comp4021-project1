@@ -6,6 +6,11 @@ var Positions = [];
 
 var gameStillGoing = true;
 
+var SCORE_KEEPING = {
+    score: 0,
+    hit_points: 3
+};
+
 $(document).ready(function() {
     for (var i = 0; i < NUMBER_OF_PLAYER_POSITIONS; i++) {
         Positions[i] = {
@@ -34,16 +39,26 @@ $(document).ready(function() {
     }, 1000 * Math.floor((Math.random() * 5) + 1));
 
     $(document).on("keydown", function(e) {
-        keyDownProcess({key: e.keyCode, char: e.charCode});
+        if (gameStillGoing == true) {
+            keyDownProcess({key: e.keyCode, char: e.charCode});
+        }
     });
 
     $(document).on("keypress", function(e) {
-        keyPressProcess({key: e.keyCode, char: e.charCode});
+        if (gameStillGoing == true) {
+            keyPressProcess({key: e.keyCode, char: e.charCode});
+        }
     });
 
     requestAnimationFrame(theBigHitboxCollisionDetectionLoop);
 });
 
+function GAME_OVER() {
+    monstersArrayTotalClear();
+
+    $("#game-screen").hide();
+    $("#game-over-screen").show();
+}
 
 function theBigHitboxCollisionDetectionLoop() {
     for (var i = 0; i < NUMBER_OF_PLAYER_POSITIONS; i++) {
@@ -60,26 +75,11 @@ function theBigHitboxCollisionDetectionLoop() {
                 }
             }
         }
+    }
 
-        /*
-        if (current_fireball.active != false) {
-            // If Active_Monsters[i].length == 0, then this for loop will do nothing. Still, put this if condition here in case.
-            if (Active_Monsters[i].length != 0) {
-                var current_enemyQueue = Active_Monsters[i];
-                for (var j = 0; j < current_enemyQueue.length; j++) {
-                    collisionBetweenMonsterAndFireball(current_fireball.obj_ref, current_enemyQueue[j], i);
-                }
-            }
-        } else {
-            if (Active_Monsters[i].length != 0) {
-                var current_enemyQueue = Active_Monsters[i];
-                for (var j = 0; j < current_enemyQueue.length; j++) {
-                    checkHowHighMonsterClimbs(current_enemyQueue[j], i);
-                }
-            }
-        }
-        */
-
+    if (SCORE_KEEPING.hit_points <= 0) {
+        gameStillGoing = false;
+        GAME_OVER();
     }
 
     if (gameStillGoing == true) {

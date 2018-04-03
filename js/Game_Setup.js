@@ -4,7 +4,7 @@ function setup_BombsAndLadders() {
         Positions[i].ladder_obj.addClass("platform_ladder");
         Positions[i].ladder_obj.attr("href", "#platform_ladder_ref");
         Positions[i].ladder_obj.css("transform", "translate(" + Positions[i].position.x.toString() + "px, 0px)");
-        $("#game-screen").append(Positions[i].ladder_obj);
+        $("#ladders-container").append(Positions[i].ladder_obj);
 
         Positions[i].bomb_obj = $(document.createElementNS("http://www.w3.org/2000/svg", "use"));
         Positions[i].bomb_obj.addClass("platform_bomb");
