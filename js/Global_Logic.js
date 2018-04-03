@@ -53,11 +53,33 @@ $(document).ready(function() {
     requestAnimationFrame(theBigHitboxCollisionDetectionLoop);
 });
 
-function GAME_OVER() {
+function GAME_OVER(didYouWin) {
     monstersArrayTotalClear();
     fireballsTotalClear()
 
-    $("#final-score").text("Score: " + SCORE_KEEPING.score);
+    if (didYouWin == true) {
+        $("#final-score").text("Score: " + SCORE_KEEPING.score);
+
+        var gameover_msg_line1 = $(document.createElementNS("http://www.w3.org/2000/svg", "tspan"));
+        gameover_msg_line1.attr("dy",0);
+        gameover_msg_line1.text("You survived the night! The sun has");
+
+        var gameover_msg_line2 = $(document.createElementNS("http://www.w3.org/2000/svg", "tspan"));
+        gameover_msg_line2.attr("dx",-420);
+        gameover_msg_line2.attr("dy",30);
+        gameover_msg_line2.text("risen and the sprites have been beaten");
+
+        $("#game-over-msg").append(gameover_msg_line1);
+        $("#game-over-msg").append(gameover_msg_line2);
+    } else {
+        $("#final-score").css("display", "none");
+
+        var gameover_msg_line1 = $(document.createElementNS("http://www.w3.org/2000/svg", "tspan"));
+        gameover_msg_line1.attr("dy",0);
+        gameover_msg_line1.text("You ran out of health!");
+
+        $("#game-over-msg").append(gameover_msg_line1);
+    }
 
     $("#game-screen").hide();
     $("#game-over-screen").show();
@@ -82,7 +104,7 @@ function theBigHitboxCollisionDetectionLoop() {
 
     if (SCORE_KEEPING.hit_points <= 0) {
         gameStillGoing = false;
-        GAME_OVER();
+        GAME_OVER(false);
     }
 
     if (gameStillGoing == true) {
