@@ -55,6 +55,7 @@ $(document).ready(function() {
 
 function GAME_OVER() {
     monstersArrayTotalClear();
+    fireballsTotalClear()
 
     $("#game-screen").hide();
     $("#game-over-screen").show();
