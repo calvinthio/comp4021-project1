@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>SmashBomb</title>
@@ -17,7 +18,10 @@
     <script src="js/Monster_Logic.js"></script>
     <script src="js/Game_Setup.js"></script>
 
+    <!--  Google Fonts  -->
     <link href="https://fonts.googleapis.com/css?family=Londrina+Solid" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+
     <link rel="stylesheet" href="css/gamestart.css">
     <link rel="stylesheet" href="css/gamescreen.css">
     <link rel="stylesheet" href="css/gameover.css">
@@ -27,12 +31,12 @@
 </head>
 
 <body>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 500">
         <!--  All gradient definitions  -->
         <defs>
             <linearGradient y2="1" x2="0" id="sky">
-                <stop offset="0" stop-color="#A67C52"/>
-                <stop offset="0.4" stop-color="#D3AB88"/>
+                <stop offset="0" stop-color="#9a8c98"/>
+                <stop offset="0.8" stop-color="#f2e9e4"/>
             </linearGradient>
 
             <image id = "platform_ladder_ref" href="assets/platform_ladder_NEW.svg" width="100%" height="100%"/>
@@ -49,17 +53,92 @@
 
         <!--  Game Screen Container  -->
         <g id="game-screen" style="display:flex;">
+            <rect height="500" width="1000" y="0" x="0" stroke="none" fill="url(#sky)"/>
             <image id = "player_char" href="assets/player_idle_NEW.svg" width="100%" height="100%"/>
             <image id = "player_platform" href="assets/player_platform_NEW.svg" width="100%" height="100%"/>
         </g>
-
-
-        <!--  Game Over Container  -->
-        <g id="game-over" style="display:none;">
+        
+        <!--  Game Over: Time's Up Container  -->
+        <g id="game-over-screen" style="display:none">
+            <!--     Background/Sky       -->
             <rect height="500" width="1000" y="0" x="0" stroke="none" fill="url(#sky)"/>
-            <text id="gameover" x="500" y="250" fill="white" font-family="'Londrina Solid', cursive" font-size="80px" text-anchor="middle">Game Over</text>
+            
+            <!--     Opaque Sun       -->
+            <g id="sun">
+                <defs>
+                    <linearGradient id="linearGradient5486">
+                        <stop stop-color="#fa7220" id="stop5488" offset="0"/>
+                        <stop stop-color="#f3ee22" stop-opacity="0.24088" id="stop5490" offset="1"/>
+                    </linearGradient>
+                    <radialGradient gradientUnits="userSpaceOnUse" gradientTransform="translate(0,1.0268197e-5)" r="1386.4293" fy="4067.4656" fx="-1323.7039" cy="4067.4656" cx="-1323.7039" id="radialGradient5492" xlink:href="#linearGradient5486"/>
+                    <filter color-interpolation-filters="sRGB" height="1.68571" y="-0.34286" width="1.68571" x="-0.34286" id="filter5498">
+                        <feGaussianBlur id="feGaussianBlur5500" stdDeviation="86.12244"/>
+                    </filter>
+                </defs>
+                <metadata id="metadata4768">image/svg+xml</metadata>
+                <g>
+                    <title>Layer 1</title>
+                    <g id="layer1" opacity="0.15" stroke="null">
+                        <g id="g5502" stroke="null">
+                            <g fill="url(#radialGradient5492)" id="g4962" stroke="null">
+                                <path fill="#ffd800" id="use4891" d="m56.522458,763.898017l59.375048,0l-29.687526,-352.548016l-29.687522,352.548016zm0,-680.11241l59.375048,0l-29.687526,352.548079l-29.687522,-352.548079z" stroke="null"/>
+                                <path fill="#ffd800" id="use4895" d="m-36.591255,745.126045l57.35187,14.369451l68.907023,-347.720064l-126.258889,333.350617l-0.000004,-0.000004zm188.25057,-656.938156l57.351899,14.369507l-126.258923,333.350494l68.907023,-347.720005l0,0.000004l0.000001,0z" stroke="null"/>
+                                <path fill="#ffd800" id="use4899" d="m-121.336286,704.459234l51.420312,27.759721l162.805636,-319.195501l-214.225947,291.43578l-0.000001,0zm363.672186,-588.994622l51.420316,27.759721l-214.225951,291.43578l162.805636,-319.195501l-0.000001,0z" stroke="null"/>
+                                <path fill="#ffd800" id="use4903" d="m-191.937332,644.668702l41.984501,39.258128l245.609358,-268.918188l-287.593859,229.660056l0,0.000004zm514.310159,-480.912083l41.984501,39.258128l-287.593859,229.660056l245.609358,-268.918188l0,0.000004z" stroke="null"/>
+                                <path fill="#ffd800" id="use4907" d="m-243.58315,569.829298l29.68756,48.081146l311.675142,-200.314584l-341.362698,152.233435l-0.000004,0.000004l0,-0.000001zm629.898737,-340.056295l29.687431,48.081265l-341.362635,152.233435l311.675205,-200.314581l0,-0.000119l-0.000001,0z" stroke="null"/>
+                                <path fill="#ffd800" id="use4911" d="m-272.754099,485.040941l15.367369,53.627579l356.500849,-118.060008l-371.868218,64.432429zm702.5607,-176.026009l15.367432,53.627579l-371.868281,64.432429l356.500849,-118.060008l0,0z" stroke="null"/>
+                                <path fill="#ffd800" id="use4915" d="m-277.462235,396.082005l0,55.519441l377.031554,-27.759721l-377.031554,-27.759721l0,0.000001zm727.344405,0l0,55.519441l-377.031554,-27.759721l377.031554,-27.759721l0,0l0,0.000001z" stroke="null"/>
+                                <path fill="#ffd800" id="use4919" d="m-257.386667,309.014928l-15.367432,53.627579l371.868281,64.43231l-356.500849,-118.059889zm702.5607,176.026009l-15.367432,53.627698l-356.500849,-118.060004l371.868281,64.43231l0,0l0,-0.000004z" stroke="null"/>
+                                <path fill="#ffd800" id="use4923" d="m-213.89559,229.773004l-29.68756,48.081265l341.362731,152.233435l-311.675171,-200.3147zm629.898671,340.056295l-29.687493,48.081146l-311.675142,-200.314581l341.362635,152.233435l0,0z" stroke="null"/>
+                                <path fill="#ffd800" id="use4927" d="m-149.952835,163.756674l-41.984501,39.258128l287.593826,229.66012l-245.609325,-268.918247l0,-0.000001zm514.310159,480.912147l-41.984501,39.258128l-245.609358,-268.918307l287.593859,229.660176l0,0l0,0.000004l0,-0.000001z" stroke="null"/>
+                                <path fill="#ffd800" id="use4931" d="m-69.915937,115.464612l-51.420282,27.759721l214.225918,291.43578l-162.805636,-319.195501zm363.672219,588.994622l-51.420316,27.759721l-162.805669,-319.195501l214.225985,291.43578z" stroke="null"/>
+                                <path fill="#ffd800" id="use4935" d="m20.760644,88.187952l-57.351899,14.369451l126.258923,333.350617l-68.907023,-347.720064l0,-0.000004l-0.000001,0zm188.25057,656.938215l-57.351899,14.369447l-68.907023,-347.720064l126.258923,333.350617l-0.000001,0z" stroke="null"/>
+                            </g>
+                            <path fill="#ffd800" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke-dashoffset="0" filter="url(#filter5498)" id="path4773" d="m165.305785,415.142139c0,40.846698 -35.412379,73.959517 -79.095805,73.959517c-43.683393,0 -79.095772,-33.112815 -79.095772,-73.959517c0,-40.846702 35.412379,-73.959517 79.095772,-73.959517c43.683426,0 79.095805,33.112815 79.095805,73.959517z" stroke="#ffffff"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            
+            
+            <text class="game-over" x="500" y="150">GAME OVER</text>
+            <text class="game-over-msg" x="305" y="190">
+                <tspan dy="0">You survived the night! The sun has</tspan>
+                <tspan dx="-420" dy="30">risen and the sprites have been beaten</tspan>
+            </text>
+            
+            <!--      Score      -->
+            <text class="final-score" x="400" y="300">Score: (variable)</text>
+            
+            <!--     Restart Button       -->
+            <foreignObject x="445" y="350" class="button" fill="white">
+                <button xmlns="http://www.w3.org/1999/xhtml">Play Again</button>
+            </foreignObject>
+        </g>
+        
+        
+        <!--    Game Over: Out of Lives Container    -->
+        <g id="game-death-screen" style="display:none">
+            <rect height="500" width="1000" y="0" x="0" stroke="none" fill="url(#sky)"/>
+            
+            <!--     Opaque Bomb       -->
+            <g id="bomb">
+                <title>Layer 1</title>
+                <path transform="rotate(-45.505123138427734 160.14196777343759,305.9685363769532) " opacity="0.1" fill="black" d="m277.25624,202.96012l-33.00781,31.98828l16.82129,16.30172c5.9668,5.7825 5.9668,15.13292 0,20.8539l-11.04492,10.70377c7.49023,16.05565 11.67969,33.89527 11.67969,52.65763c0,70.68179 -59.09668,127.95311 -132.03125,127.95311s-132.03125,-57.2098 -132.03125,-127.89159s59.09668,-127.95311 132.03125,-127.95311c19.36035,0 37.76856,4.06005 54.33594,11.31893l11.04492,-10.70377c5.9668,-5.7825 15.61523,-5.7825 21.51855,0l16.82129,16.30172l33.00781,-31.98828l10.85449,10.45771zm37.76856,-17.53204l-15.23438,0c-4.18945,0 -7.61719,3.32186 -7.61719,7.38191s3.42773,7.38191 7.61719,7.38191l15.23438,0c4.18945,0 7.61719,-3.32186 7.61719,-7.38191s-3.42773,-7.38191 -7.61719,-7.38191zm-38.08594,-36.90955c-4.18945,0 -7.61719,3.32186 -7.61719,7.38191l0,14.76382c0,4.06005 3.42773,7.38191 7.61719,7.38191s7.61719,-3.32186 7.61719,-7.38191l0,-14.76382c0,-4.06005 -3.42773,-7.38191 -7.61719,-7.38191zm21.51855,33.83375l10.79102,-10.45771c2.9834,-2.89125 2.9834,-7.56646 0,-10.45771c-2.9834,-2.89125 -7.80762,-2.89125 -10.79102,0l-10.79102,10.45771c-2.9834,2.89125 -2.9834,7.56646 0,10.45771c3.04688,2.89125 7.87109,2.89125 10.79102,0zm-43.03711,0c2.9834,2.89125 7.80762,2.89125 10.79102,0c2.9834,-2.89125 2.9834,-7.56646 0,-10.45771l-10.79102,-10.45771c-2.9834,-2.89125 -7.80762,-2.89125 -10.79102,0c-2.9834,2.89125 -2.9834,7.56646 0,10.45771l10.79102,10.45771zm43.03711,20.91541c-2.9834,-2.89125 -7.80762,-2.89125 -10.79102,0c-2.9834,2.89125 -2.9834,7.56646 0,10.45771l10.79102,10.45771c2.9834,2.89125 7.80762,2.89125 10.79102,0c2.9834,-2.89125 2.9834,-7.56646 0,-10.45771l-10.79102,-10.45771zm-229.72168,112.57413c0,-21.71512 18.21777,-39.37019 40.625,-39.37019c5.58594,0 10.15625,-4.42915 10.15625,-9.84255s-4.57031,-9.84255 -10.15625,-9.84255c-33.5791,0 -60.9375,26.51336 -60.9375,59.05528c0,5.4134 4.57031,9.84255 10.15625,9.84255s10.15625,-4.42915 10.15625,-9.84255z" id="svg_1"/>
+            </g>
+            
+            <text class="game-over" x="500" y="150">GAME OVER</text>
+            <text class="game-over-msg" x="343" y="200">Oh no! You're all out of lives</text>
+            <!--      Score      -->
+            <text class="final-score" x="400" y="300">Score: (variable)</text>
+            
+            <!--     Restart Button       -->
+            <foreignObject x="445" y="350" class="button" fill="white">
+                <button xmlns="http://www.w3.org/1999/xhtml">Play Again</button>
+            </foreignObject>
         </g>
 
     </svg>
 </body>
+
 </html>
