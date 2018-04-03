@@ -1,12 +1,15 @@
 var Player_Obj = {
     html_id_string: "#player_char",
-    currentPos: 2
+    currentPos: 2,
+    current_state: "idle"
 }
 
 function fireFromPosition(player_pos) {
-    $(Player_Obj.html_id_string).attr("src", "assets/player_attack.svg");
+    $(Player_Obj.html_id_string).attr("href", "assets/player_attack_NEW.svg");
+    Player_Obj.current_state = "attacking";
     setTimeout(function () {
-        $(Player_Obj.html_id_string).attr("src", "assets/player_idle.svg");
+        $(Player_Obj.html_id_string).attr("href", "assets/player_idle_NEW.svg");
+        Player_Obj.current_state = "idle";
     }, 250);
 
     if (Positions[player_pos].canFireShotFromHere == true) {

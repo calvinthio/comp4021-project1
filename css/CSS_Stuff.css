@@ -6,10 +6,8 @@
 }
 
 #player_platform {
-    transform: translateY(185px);
     position: absolute;
     margin: auto;
-    z-index: -1;
 }
 
 .platform_ladder, .platform_bomb {
@@ -52,5 +50,8 @@ img {
     width: 100vw;
     height: 20vh;
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> a9d5305937dc66ca5c6a6a8c52f99f1e4918692b

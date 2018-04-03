@@ -6,33 +6,65 @@ var Active_Monsters = [
     []
 ];
 
+function setupMonsterLOOP() {
+    if (gameStillGoing == true) {
+        setupMonster(Math.floor((Math.random() * 5)));
+
+        setTimeout(function () {
+            setupMonsterLOOP(Math.floor((Math.random() * 5)));
+        }, 1000 * Math.floor((Math.random() * 1) + 1));
+    }
+}
+
 function setupMonster(pos_num) {
-    var newMonster = $("<img>");
-    newMonster.addClass("enemy_monster");
-    newMonster.attr("src", "assets/climbing_enemy.svg");
-    newMonster.css("transform", "translate(" + Positions[pos_num].position.x.toString() + "px, 525px)");
-    newMonster.hide();
+    var newMonster = {
+        obj_ref: $(document.createElementNS("http://www.w3.org/2000/svg", "use"))
+    }
 
-    Active_Monsters[pos_num].push({obj_ref: newMonster, timeout_func: null});
 
-    $("#game-screen").append(newMonster);
+    newMonster.obj_ref.addClass("enemy_monster");
+    newMonster.obj_ref.attr("href", "#climbing_enemy_ref");
+    newMonster.obj_ref.css("transform", "translate(" + Positions[pos_num].position.x.toString() + "px, 0px)");
+    newMonster.obj_ref.hide();
 
-    setTimeout(startMonsterMove({obj_ref: newMonster, timeout_func: null}, pos_num), 500);
+    Active_Monsters[pos_num].push(newMonster);
+
+    $("#enemies-container").append(newMonster.obj_ref);
+
+    setTimeout(startMonsterMove(newMonster, pos_num), 500);
 }
 
 function startMonsterMove(monster_entity, monster_pos) {
     monster_entity.obj_ref.show();
-    monster_entity.obj_ref.css("transform", "translate(" + Positions[monster_pos].position.x.toString() + "px, 100px)");
+    monster_entity.obj_ref.css("transform", "translate(" + Positions[monster_pos].position.x.toString() + "px, -300px)");
+}
 
-    monster_entity.timeout_func = setTimeout(function () {
-        monsterReachesTop(monster_pos);
-    }, 2000);
+function checkHowHighMonsterClimbs(monster_entity, monster_pos) {
+    var enemy_PosY = parseFloat(monster_entity.obj_ref.css("Transform").split(",")[5]);
+    //console.log(JSON.stringify(enemy_PosY));
+
+    if (enemy_PosY <= -300) {
+        //console.log("Monster has reached top!");
+        monsterReachesTop(monster_pos)
+    }
 }
 
 function monsterReachesTop(monster_pos) {
     (Active_Monsters[monster_pos].shift()).obj_ref.remove();
+    SCORE_KEEPING.hit_points = SCORE_KEEPING.hit_points - 1;
 }
 
 function monsterGetsKilled(monster_pos) {
+    (Active_Monsters[monster_pos].shift()).obj_ref.remove();
+}
 
+function monstersArrayTotalClear() {
+    for (var i = 0; i < NUMBER_OF_PLAYER_POSITIONS; i++) {
+        if (Active_Monsters[i].length != 0) {
+            var current_enemyQueue = Active_Monsters[i];
+            for (var j = 0; j < current_enemyQueue.length; j++) {
+                (current_enemyQueue.shift()).obj_ref.remove();
+            }
+        }
+    }
 }
