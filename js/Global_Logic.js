@@ -59,10 +59,10 @@ function GAME_OVER(didYouWin) {
     var whichScreenToShow = "";
 
     if (didYouWin == true) {
-        $("#game-over-screen > .game-over-msg").text("Score: " + SCORE_KEEPING.score);
+        $("#game-over-screen > .final-score").text("Score: " + SCORE_KEEPING.score);
         whichScreenToShow = "#game-over-screen";
     } else {
-        $("#game-death-screen > .game-over-msg").hide();
+        $("#game-death-screen > .final-score").hide();
         whichScreenToShow = "#game-death-screen";
     }
 
