@@ -44,7 +44,7 @@ function checkHowHighMonsterClimbs(monster_entity, monster_pos) {
     //console.log(JSON.stringify(enemy_PosY));
 
     if (enemy_PosY <= -300) {
-        console.log("Monster has reached top!");
+        //console.log("Monster has reached top!");
         monsterReachesTop(monster_pos)
     }
 }

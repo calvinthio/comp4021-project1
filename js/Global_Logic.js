@@ -57,6 +57,8 @@ function GAME_OVER() {
     monstersArrayTotalClear();
     fireballsTotalClear()
 
+    $("#final-score").text("Score: " + SCORE_KEEPING.score);
+
     $("#game-screen").hide();
     $("#game-over-screen").show();
 }
