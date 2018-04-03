@@ -35,6 +35,7 @@ function collisionBetweenMonsterAndFireball(fireball_obj, monster_entity, monste
 
     if (difference_in_Y > 261 && difference_in_Y < 347) {
         console.log("Hit!");
+        SCORE_KEEPING.score = SCORE_KEEPING.score + 100;
         monsterGetsKilled(monster_pos);
     }
 }
