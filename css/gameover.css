@@ -13,7 +13,7 @@
     height: 200px;
 }
 
-#final-score {
+.final-score {
     fill: #565264;
     font-family: 'Londrina Solid', cursive;
     font-size: 35px;

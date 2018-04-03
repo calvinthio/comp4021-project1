@@ -101,14 +101,21 @@ function startButtonClicked() {
         requestAnimationFrame(theBigHitboxCollisionDetectionLoop);
 }
 
-function GAME_OVER() {
+function GAME_OVER(didYouWin) {
     monstersArrayTotalClear();
     fireballsTotalClear()
+    var whichScreenToShow = "";
 
-    $("#final-score").text("Score: " + SCORE_KEEPING.score);
+    if (didYouWin == true) {
+        $("#game-over-screen > .final-score").text("Score: " + SCORE_KEEPING.score);
+        whichScreenToShow = "#game-over-screen";
+    } else {
+        $("#game-death-screen > .final-score").hide();
+        whichScreenToShow = "#game-death-screen";
+    }
 
     $("#game-screen").hide();
-    $("#game-over-screen").show();
+    $(whichScreenToShow).show();
 }
 
 function theBigHitboxCollisionDetectionLoop() {
@@ -130,7 +137,7 @@ function theBigHitboxCollisionDetectionLoop() {
 
     if (SCORE_KEEPING.hit_points <= 0) {
         gameStillGoing = false;
-        GAME_OVER();
+        GAME_OVER(false);
     }
 
     if (gameStillGoing == true) {
