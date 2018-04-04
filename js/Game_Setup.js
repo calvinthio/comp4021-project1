@@ -25,6 +25,6 @@ function clearBombs() {
     $(".platform_bomb").remove();
 }
 
-function clearLadderss() {
+function clearLadders() {
     $(".platform_ladder").remove();
 }

@@ -118,7 +118,7 @@ function GAME_OVER(didYouWin) {
         whichScreenToShow = "#game-death-screen";
     }
 
-    //$("#game-screen").hide();
+    $("#game-screen").hide();
     $(whichScreenToShow).show();
 }
 
