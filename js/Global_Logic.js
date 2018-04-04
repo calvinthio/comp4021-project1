@@ -56,6 +56,8 @@ var SCORE_KEEPING = {
 
 // run this function once the start button is clicked
 function startButtonClicked() {
+    if(SCORE_KEEPING.hit_points == 0)
+        resetGame();
 
     $("#game-screen").fadeIn(400);
     $("#game-start").hide();
@@ -104,6 +106,8 @@ function startButtonClicked() {
 function GAME_OVER(didYouWin) {
     monstersArrayTotalClear();
     fireballsTotalClear()
+    clearBombs();
+    clearLadders();
     var whichScreenToShow = "";
 
     if (didYouWin == true) {
@@ -114,7 +118,7 @@ function GAME_OVER(didYouWin) {
         whichScreenToShow = "#game-death-screen";
     }
 
-    $("#game-screen").hide();
+    //$("#game-screen").hide();
     $(whichScreenToShow).show();
 }
 
@@ -161,5 +165,18 @@ function keyPressProcess(code_table) {
 
 function ifGameStarted() {
     gameStarted = true;
+}
+
+function resetGame() {
+    $("#game-death-screen").hide();
+    SCORE_KEEPING.hit_points = 3;
+    SCORE_KEEPING.score = 0;
+    gameStillGoing = true;
+
+    Player_Obj.currentPos = 2;
+
+    // Clear Timeout
+    clearTimeout(loopMonsterTimeout);
+
 }
 

@@ -10,7 +10,7 @@ function setupMonsterLOOP() {
     if (gameStillGoing == true) {
         setupMonster(Math.floor((Math.random() * 5)));
 
-        setTimeout(function () {
+        loopMonsterTimeout = setTimeout(function () {
             setupMonsterLOOP(Math.floor((Math.random() * 5)));
         }, 1000 * Math.floor((Math.random() * 1) + 1));
     }
