@@ -20,3 +20,11 @@ function setup_BombsAndLadders() {
         $("#game-screen").append(Positions[i].fireball.obj_ref);
     }
 }
+
+function clearBombs() {
+    $(".platform_bomb").remove();
+}
+
+function clearLadders() {
+    $(".platform_ladder").remove();
+}

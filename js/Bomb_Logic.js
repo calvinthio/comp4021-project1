@@ -11,7 +11,7 @@ function fireBombTrail_Go(pos_num) {
     Positions[pos_num].fireball.obj_ref.css("transform", "translate(" + Positions[pos_num].position.x.toString() + "px, 525px)");
     Positions[pos_num].fireball.active = true;
 
-    setTimeout(function () {
+    bombGoTimeout = setTimeout(function () {
         fireBombTrail_Return(pos_num);
     }, 1000);
 }
@@ -21,7 +21,7 @@ function fireBombTrail_Return(pos_num) {
     Positions[pos_num].fireball.obj_ref.css("transform", "translate(" + Positions[pos_num].position.x.toString() + "px, 0px)");
     Positions[pos_num].fireball.active = false;
 
-    setTimeout(function () {
+    respawnTimeout = setTimeout(function () {
         bombRespawn(pos_num);
     }, 1000);
 }
@@ -46,3 +46,5 @@ function fireballsTotalClear() {
         Positions[i].fireball.obj_ref.remove();
     }
 }
+
+
