@@ -177,6 +177,6 @@ function resetGame() {
 
     // Clear Timeout
     clearTimeout(loopMonsterTimeout);
-
 }
+
 

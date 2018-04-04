@@ -47,6 +47,4 @@ function fireballsTotalClear() {
     }
 }
 
-function clearBombs() {
-    $(".platform_bomb").remove();
-}
+
