@@ -5,6 +5,10 @@ var Player_Obj = {
 }
 
 function fireFromPosition(player_pos) {
+    if (Player_Obj.current_state == "attacking") {
+        return;
+    }
+
     $(Player_Obj.html_id_string).attr("href", "assets/player_attack_NEW.svg");
     Player_Obj.current_state = "attacking";
     setTimeout(function () {
@@ -22,6 +26,8 @@ function fireFromPosition(player_pos) {
         setTimeout(function () {
             Positions[player_pos].canFireShotFromHere = true;
         }, 1000);
+    } else {
+        document.getElementById("soundEffect_attackNoBomb").play();
     }
 }
 

@@ -76,6 +76,11 @@ function startButtonClicked() {
     $("#game-screen").fadeIn(400);
     $("#game-start").hide();
 
+    var game_bgm = document.getElementById("game_bgm");
+
+    game_bgm.volume = 0.5;
+    game_bgm.play();
+
      for (var i = 0; i < NUMBER_OF_PLAYER_POSITIONS; i++) {
             Positions[i] = {
                 position: {
@@ -111,6 +116,8 @@ function GAME_OVER(didYouWin) {
     clearBombs();
     clearLadders();
     var whichScreenToShow = "";
+
+    document.getElementById("game_bgm").load();
 
     if (didYouWin == true) {
         $("#game-over-screen > .final-score").text("Score: " + SCORE_KEEPING.score);
