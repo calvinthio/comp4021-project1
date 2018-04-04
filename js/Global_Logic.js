@@ -11,6 +11,20 @@ var SCORE_KEEPING = {
     hit_points: 3
 };
 
+$(document).ready(function() {
+    $(document).on("keydown", function(e) {
+        if (gameStillGoing == true) {
+            keyDownProcess({key: e.keyCode, char: e.charCode});
+        }
+    });
+
+    $(document).on("keypress", function(e) {
+        if (gameStillGoing == true) {
+            keyPressProcess({key: e.keyCode, char: e.charCode});
+        }
+    });
+});
+
 // $(document).ready(function() {
         // for (var i = 0; i < NUMBER_OF_PLAYER_POSITIONS; i++) {
         //     Positions[i] = {
@@ -88,18 +102,6 @@ function startButtonClicked() {
             }
         }, 1000 * Math.floor((Math.random() * 5) + 1));
 
-        $(document).on("keydown", function(e) {
-            if (gameStillGoing == true) {
-                keyDownProcess({key: e.keyCode, char: e.charCode});
-            }
-        });
-
-        $(document).on("keypress", function(e) {
-            if (gameStillGoing == true) {
-                keyPressProcess({key: e.keyCode, char: e.charCode});
-            }
-        });
-
         requestAnimationFrame(theBigHitboxCollisionDetectionLoop);
 }
 
@@ -174,9 +176,8 @@ function resetGame() {
     gameStillGoing = true;
 
     Player_Obj.currentPos = 2;
+    setNewPlayerPosition(Player_Obj.currentPos);
 
     // Clear Timeout
     clearTimeout(loopMonsterTimeout);
 }
-
-
