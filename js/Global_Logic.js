@@ -177,6 +177,11 @@ function resetGame() {
 
     // Clear Timeout
     clearTimeout(loopMonsterTimeout);
+
+    // Add back lives
+    $("#heart-0").show();
+    $("#heart-1").show();
+    $("#heart-2").show();
 }
 
 
