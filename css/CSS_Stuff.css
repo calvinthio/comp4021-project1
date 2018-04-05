@@ -51,3 +51,11 @@ img {
     height: 20vh;
 }
 
+/* Game screen css */
+
+#game-score, #game-timer {
+    fill: white;
+    font-family :'Londrina Solid', cursive;
+    font-size: 18px;
+}
+
