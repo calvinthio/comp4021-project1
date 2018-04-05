@@ -38,6 +38,13 @@ function collisionBetweenMonsterAndFireball(fireball_obj, monster_entity, monste
         SCORE_KEEPING.score = SCORE_KEEPING.score + 10;
         //console.log("Score: " + SCORE_KEEPING.score);
         $("#game-score").text("Score: " + SCORE_KEEPING.score);
+        //animate the score if it reaches multiple of 100 milestone
+        if (SCORE_KEEPING.score % 100 == 0) {
+            $("#game-score").css("animationPlayState", "running");
+        } else {
+            $("#game-score").css("animationPlayState", "paused");
+        }
+        
         monsterGetsKilled(monster_pos);
     }
 }
