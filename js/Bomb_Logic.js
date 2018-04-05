@@ -35,8 +35,9 @@ function collisionBetweenMonsterAndFireball(fireball_obj, monster_entity, monste
 
     if (difference_in_Y > 261 && difference_in_Y < 347) {
         //console.log("Hit!");
-        SCORE_KEEPING.score = SCORE_KEEPING.score + 100;
+        SCORE_KEEPING.score = SCORE_KEEPING.score + 10;
         //console.log("Score: " + SCORE_KEEPING.score);
+        $("#game-score").text("Score: " + SCORE_KEEPING.score);
         monsterGetsKilled(monster_pos);
     }
 }

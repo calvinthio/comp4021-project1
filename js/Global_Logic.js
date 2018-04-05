@@ -11,6 +11,10 @@ var SCORE_KEEPING = {
     hit_points: 3
 };
 
+var minutes = 1;
+var seconds = 30;
+var timeUp = false;
+
 $(document).ready(function() {
     $(document).on("keydown", function(e) {
         if (gameStillGoing == true) {
@@ -70,7 +74,7 @@ $(document).ready(function() {
 
 // run this function once the start button is clicked
 function startButtonClicked() {
-    if(SCORE_KEEPING.hit_points == 0)
+    if(SCORE_KEEPING.hit_points == 0 || timeUp == true)
         resetGame();
 
     $("#game-screen").fadeIn(400);
@@ -108,6 +112,7 @@ function startButtonClicked() {
         }, 1000 * Math.floor((Math.random() * 5) + 1));
 
         requestAnimationFrame(theBigHitboxCollisionDetectionLoop);
+        countDownTimeout = setTimeout(countDown, 1000);
 }
 
 function GAME_OVER(didYouWin) {
@@ -123,7 +128,7 @@ function GAME_OVER(didYouWin) {
         $("#game-over-screen > .final-score").text("Score: " + SCORE_KEEPING.score);
         whichScreenToShow = "#game-over-screen";
     } else {
-        $("#game-death-screen > .final-score").hide();
+        $("#game-death-screen > .final-score").text("Score:       0");
         whichScreenToShow = "#game-death-screen";
     }
 
@@ -177,9 +182,17 @@ function ifGameStarted() {
 }
 
 function resetGame() {
-    $("#game-death-screen").hide();
+    
+    if (SCORE_KEEPING.hit_points == 0)
+        $("#game-death-screen").hide();
+    else
+        $("#game-over-screen").hide();
+        
     SCORE_KEEPING.hit_points = 3;
     SCORE_KEEPING.score = 0;
+    minutes = 1;
+    seconds = 30;
+    timeUp = false;
     gameStillGoing = true;
 
     Player_Obj.currentPos = 2;
@@ -187,9 +200,15 @@ function resetGame() {
 
     // Clear Timeout
     clearTimeout(loopMonsterTimeout);
+    clearTimeout(countDownTimeout);
+    clearTimeout(inlineTimeout);
 
     // Add back lives
     $("#heart-0").show();
     $("#heart-1").show();
     $("#heart-2").show();
+    
+    // Show updated timer
+    $("#game-timer").text("0"+minutes+":"+seconds);
+    $("#game-score").text("Score: 0");
 }
