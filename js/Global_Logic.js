@@ -128,7 +128,7 @@ function GAME_OVER(didYouWin) {
         $("#game-over-screen > .final-score").text("Score: " + SCORE_KEEPING.score);
         whichScreenToShow = "#game-over-screen";
     } else {
-        $("#game-death-screen > .final-score").text("Score:       0");
+        $("#game-death-screen > .final-score").text("Score: " + SCORE_KEEPING.score);
         whichScreenToShow = "#game-death-screen";
     }
 
