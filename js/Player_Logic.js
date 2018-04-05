@@ -18,6 +18,11 @@ function fireFromPosition(player_pos) {
 
     if (Positions[player_pos].canFireShotFromHere == true) {
         // Fire the shot
+        var fire_sound = document.getElementById("SE_attackBomb");
+        fire_sound.volume = 0.15;
+        fire_sound.load();
+        fire_sound.play();
+
         bombDetonate(player_pos);
         fireBombTrail_Go(player_pos);
 
@@ -27,7 +32,10 @@ function fireFromPosition(player_pos) {
             Positions[player_pos].canFireShotFromHere = true;
         }, 1000);
     } else {
-        document.getElementById("soundEffect_attackNoBomb").play();
+        var noFire_sound = document.getElementById("soundEffect_attackNoBomb");
+        noFire_sound.volume = 0.3;
+        noFire_sound.load();
+        noFire_sound.play();
     }
 }
 
