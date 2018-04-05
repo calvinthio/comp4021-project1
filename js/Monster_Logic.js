@@ -53,6 +53,8 @@ function monsterReachesTop(monster_pos) {
     (Active_Monsters[monster_pos].shift()).obj_ref.remove();
     SCORE_KEEPING.hit_points = SCORE_KEEPING.hit_points - 1;
 
+    document.getElementById("SE_playerTakeDamage").play();
+
     // Remove heart
     if(SCORE_KEEPING.hit_points == 2)
         $("#heart-2").hide();
