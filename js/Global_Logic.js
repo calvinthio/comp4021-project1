@@ -197,6 +197,7 @@ function resetGame() {
 
     Player_Obj.currentPos = 2;
     setNewPlayerPosition(Player_Obj.currentPos);
+    monstersArrayTotalClear();
 
     // Clear Timeout
     clearTimeout(loopMonsterTimeout);
