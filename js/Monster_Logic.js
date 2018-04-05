@@ -10,9 +10,17 @@ function setupMonsterLOOP() {
     if (gameStillGoing == true) {
         setupMonster(Math.floor((Math.random() * 5)));
 
-        loopMonsterTimeout = setTimeout(function () {
+
+        // Set the difficulty 
+        if(SCORE_KEEPING.score > 500) {
+           loopMonsterTimeout = setTimeout(function () {
+            setupMonsterLOOP(Math.floor((Math.random() * 5)));
+        }, 600 * Math.floor((Math.random() * 1) + 1)); 
+        } else {
+            loopMonsterTimeout = setTimeout(function () {
             setupMonsterLOOP(Math.floor((Math.random() * 5)));
         }, 1000 * Math.floor((Math.random() * 1) + 1));
+        }   
     }
 }
 
