@@ -19,6 +19,7 @@
     font-size: 35px;
 }
 
+/* Animating the buttons upon hover using transition */
 button {
     background-color: #4a4e69;
     height: 34px;
@@ -27,9 +28,14 @@ button {
     border: 1px solid white;
     color: white;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 20px;
+    font-size: 20px;  
+    transition: 0.3s;
 }
 
 button:hover {
     background-color: #22223b;
+    width: 131px;
+    height: 35px;
 }
+
+

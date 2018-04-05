@@ -44,7 +44,6 @@ function collisionBetweenMonsterAndFireball(fireball_obj, monster_entity, monste
         } else {
             $("#game-score").css("animationPlayState", "paused");
         }
-        
         monsterGetsKilled(monster_pos);
     }
 }
