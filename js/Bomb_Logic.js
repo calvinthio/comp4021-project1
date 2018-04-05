@@ -27,6 +27,11 @@ function fireBombTrail_Return(pos_num) {
 }
 
 function collisionBetweenMonsterAndFireball(fireball_obj, monster_entity, monster_pos) { // Check collision between monster object and fireball object
+
+    if (monster_entity === undefined) {
+        return;
+    }
+
     var fireball_PosY = parseFloat(fireball_obj.css("Transform").split(",")[5]);
     var enemy_PosY = parseFloat(monster_entity.obj_ref.css("Transform").split(",")[5]);
 
@@ -53,5 +58,3 @@ function fireballsTotalClear() {
         Positions[i].fireball.obj_ref.remove();
     }
 }
-
-
