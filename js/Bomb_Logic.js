@@ -3,7 +3,7 @@ function bombDetonate(pos_num) {
 }
 
 function bombRespawn(pos_num) {
-    Positions[pos_num].bomb_obj.show();
+    Positions[pos_num].bomb_obj.show(250);
 }
 
 function fireBombTrail_Go(pos_num) {
