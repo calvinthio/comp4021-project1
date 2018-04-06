@@ -51,11 +51,43 @@ img {
     height: 20vh;
 }
 
-/* Game screen css */
+/* Animating the timer when it reaches < 10s by blinking */
+@keyframes timer-animation {
+	50% { opacity: 0; }
+}
 
-#game-score, #game-timer {
+#game-timer {
+    fill: white;
+    font-family :'Londrina Solid', cursive;
+    font-size: 18px;
+    opacity: 1;
+    
+    animation-name: timer-animation;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+
+/*Animating the score when it reaches multiple of 100 milestone*/
+@keyframes score-animation {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+  
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+ 
+#game-score {
+    animation: score-animation 1s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+    
     fill: white;
     font-family :'Londrina Solid', cursive;
     font-size: 18px;
 }
-

@@ -203,6 +203,11 @@ function resetGame() {
     clearTimeout(loopMonsterTimeout);
     clearTimeout(countDownTimeout);
     clearTimeout(inlineTimeout);
+    
+    // End animations
+    $("#game-score").css("animationPlayState", "paused");
+    $("#game-timer").css("animation-play-state", "paused");
+    $("#game-timer").css("opacity", "1");
 
     // Add back lives
     $("#heart-0").show();
