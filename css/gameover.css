@@ -36,6 +36,7 @@ button:hover {
     background-color: #22223b;
     width: 131px;
     height: 35px;
+    cursor: pointer;
 }
 
 
