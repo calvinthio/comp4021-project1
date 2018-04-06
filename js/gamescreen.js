@@ -29,7 +29,7 @@ function countDown() {
             }
         }
 
-        // Check if the game is still going or not. If not, stop the countdown
+        //Check if the game is still going or not. If not, stop the countdown
         if(gameStillGoing == false) {
             $("#game-timer").css("animation-play-state", "paused");
             $("#game-timer").css("opacity", "1");
@@ -39,16 +39,19 @@ function countDown() {
 
 
 
-        // inlineTimeout = setTimeout(countDown, 1000);
+        //inlineTimeout = setTimeout(countDown, 1000);
     }    
     
     else {
         // end the game
-        $("#game-timer").css("animation-play-state", "paused");
-        $("#game-timer").css("opacity", "1");
-        gameStillGoing = false;
-        timeUp = true;
-        GAME_OVER(true);
+        if (SCORE_KEEPING.hit_points != 0) {
+            $("#game-timer").css("animation-play-state", "paused");
+            $("#game-timer").css("opacity", "1");
+            gameStillGoing = false;
+            timeUp = true;
+            GAME_OVER(true);
+        } 
+        
     }
 }
 
