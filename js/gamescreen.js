@@ -28,7 +28,18 @@ function countDown() {
                 $("#game-timer").text("0"+minutes+":"+seconds);
             }
         }
-        inlineTimeout = setTimeout(countDown, 1000);
+
+        // Check if the game is still going or not. If not, stop the countdown
+        if(gameStillGoing == false) {
+            $("#game-timer").css("animation-play-state", "paused");
+            $("#game-timer").css("opacity", "1");
+        } else {
+            inlineTimeout = setTimeout(countDown, 1000);
+        }
+
+
+
+        // inlineTimeout = setTimeout(countDown, 1000);
     }    
     
     else {
@@ -40,6 +51,5 @@ function countDown() {
         GAME_OVER(true);
     }
 }
-
 
 
