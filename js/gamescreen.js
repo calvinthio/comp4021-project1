@@ -17,6 +17,7 @@ function countDown() {
         if (minutes == 0) {
             if (seconds % 60 < 10) {
                 $("#game-timer").text("00:0"+seconds);
+                $("#game-timer").css("animation-play-state", "running");
             } else {
                 $("#game-timer").text("00:"+seconds);
             }
@@ -32,9 +33,13 @@ function countDown() {
     
     else {
         // end the game
+        $("#game-timer").css("animation-play-state", "paused");
+        $("#game-timer").css("opacity", "1");
         gameStillGoing = false;
         timeUp = true;
         GAME_OVER(true);
     }
 }
+
+
 
