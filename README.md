@@ -1,1 +1,3 @@
-# comp4021-project1
+# SmashBomb
+
+by Edward, Rhea and Calvinthio
